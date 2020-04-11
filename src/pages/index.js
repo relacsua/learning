@@ -4,12 +4,14 @@ import Layout from "../components/layout"
 
 export default ({ data }) => (
   <Layout>
-    <h1>Hi! I'm building a fake Gatsby site as part of a tutorial!</h1>
+    <h1>Hi! I love <span role="img">😺</span></h1>
     <p>
-      What do I like to do? Lots of course but definitely enjoy building
-      websites.
+      What do I like to do? Build websites to share my love for <span role="img">😺</span>
     </p>
-    <span>Created with love by {data.site.siteMetadata.author} @ {data.site.buildTime}</span>
+    <marquee>
+      <img src={`https://placekitten.com/g/${data.site.siteMetadata.cat.width}/${data.site.siteMetadata.cat.height}`} />
+    </marquee>
+    <small>Created with <span role="img">💖</span> by {data.site.siteMetadata.author} @ {data.site.buildTime}</small>
   </Layout>
 )
 
@@ -19,6 +21,10 @@ export const query = graphql`
     site {
       siteMetadata {
         author
+        cat {
+          height
+          width
+        }
       }
       buildTime
     }
