@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-const randomInt = (max) => Math.floor(Math.random() * Math.floor(max))
+const randomInt = (max) => Math.floor(Math.random() * max)
 
 module.exports = {
   /* Your site config here */

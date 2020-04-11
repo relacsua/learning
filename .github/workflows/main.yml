@@ -1,12 +1,11 @@
 name: Trigger Netlify Build
 on:
   schedule:
-    # Every 5 minutes
-    - cron: '*/5 * * * *'
+    - cron: '*/5 * * * *' # Every 5 minutes
 jobs:
   build:
-    name: Build on netlify
+    name: Build on Netlify
     runs-on: ubuntu-latest
     steps:
-      - name: Curl request
+      - name: Build on master
         run: curl -X POST -d {} ${{ secrets.NETLIFY_HOOK_URL }}
